@@ -4,8 +4,7 @@
 # License: MIT
 # (c) kaiwanTECH
 [ ! -f sched_pthrd_rtprio_dbg ] && {
-  echo "$0: build it first pl..."
-  exit 1
+  echo make ; make || exit 1
 }
 #--- 'Old' way: via sudo
 # Allow it to only execute on core #1
@@ -14,6 +13,7 @@
 echo "FYI: sched_rt_period_us and sched_rt_runtime_us values:"
 cat /proc/sys/kernel/sched_rt_period_us /proc/sys/kernel/sched_rt_runtime_us
 echo
+
 
 #--- 'New' way: via capabilities!
 # There's a better approach to using sudo; we use the powerful POSIX
