@@ -1,0 +1,56 @@
+[On Windows, view this with Notepad++ or equivalent]
+-----------------------------------------------------
+kaiwanTECH : opensource GitHub repos:
+-----------------------------------------------------
+
+<<-------- Presentations / Workshops ------->>
+Leveraging the Linux CPU Scheduler to write real-time MT apps
+Nov 2022, IEW IoTShow
+https://github.com/kaiwan/cpu_sched_demo
+
+Mitigating Hackers with Hardening on Linux - an Overview for Developers,
+focus on BoF (Buffer Overflow)
+Nov 2022, IEW IoTShow
+https://github.com/kaiwan/hacksec
+
+
+<<------- My Books - GitHub repos ------->>
+Linux Kernel Debugging
+- Leverage proven tools and advanced techniques to effectively debug Linux kernels and kernel modules
+Packt, Aug 2022
+https://github.com/PacktPublishing/Linux-Kernel-Debugging
+
+Linux Kernel Programming
+ - A comprehensive guide to kernel internals, writing kernel modules, and kernel synchronization
+Packt, Mar 2021
+https://github.com/PacktPublishing/Linux-Kernel-Programming
+
+Linux Kernel Programming - Part 2
+ - Char Device Drivers and Kernel Synchronization: Create user-kernel interfaces, work with peripheral I/O, and handle hardware interrupts
+Packt, Mar 2021
+https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
+
+Hands-On System Programming with Linux, Kaiwan NB, Packt - code:
+Packt, Oct 2018
+https://github.com/PacktPublishing/Hands-on-System-Programming-with-Linux
+
+
+<<------- Training repos ------->>
+Linux Fundamentals, CLI, bash scripting:
+https://github.com/kaiwan/L0_cli_trg
+
+Linux systems programming: 
+https://github.com/kaiwan/L1_sysprg_trg
+
+Linux kernel internals:
+https://github.com/kaiwan/L2_kernel_trg
+
+Linux kernel device drivers: 
+git clone https://github.com/kaiwan/L3_dd_trg
+
+Embedded Linux:
+git clone https://github.com/kaiwan/L4_emblinux_trg
+
+Linux kernel debug: 
+git clone https://github.com/kaiwan/L5_debug_trg
+
