@@ -18,6 +18,13 @@
 # - the tuna(8) program performs this and much more! check it out...
 #
 # For details, pl refer to the book Ch 10.
+
+# Added:
+# Turn on unofficial Bash 'strict mode'! V useful
+# "Convert many kinds of hidden, intermittent, or subtle bugs into immediate, glaringly obvious errors"
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/ 
+set -euo pipefail
+
 i=1
 printf "  PID       TID            Name                     Sched Policy  Prio *RT  CPU-affinity-mask\n"
 prev_pid=1
