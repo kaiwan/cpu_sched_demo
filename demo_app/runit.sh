@@ -10,6 +10,26 @@
 set -euo pipefail
 name=$(basename $0)
 
+usage()
+{
+echo "Usage: ${name} [option]
+ 0  : do NOT set the runtime value - the 'max cpu bandwidth' - to the period value,
+      so that the (soft) RT threads do 'leak' any CPU to non-RT threads
+      (this is the default behaviour)
+ 1  : DO set the runtime value - the 'max cpu bandwidth' - to the period value,
+      so that the (soft) RT threads do NOT 'leak' any CPU to non-RT threads
+ -h : show this help screen"
+}
+
+
+#--- 'main'
+[[ $# -eq 1 && "$1" = "-h" ]] && {
+	usage
+	exit 0
+}
+CHANGE_RUNTIME_TO_PERIOD=0
+[[ $# -eq 1 && $1 -ne 0 ]] && CHANGE_RUNTIME_TO_PERIOD=1
+
 PRG=sched_pthrd_rtprio_dbg
 [[ ! -f ${PRG} ]] && {
   echo make ; make || exit 1
@@ -55,3 +75,7 @@ getcap ./${PRG} | grep "cap_sys_nice" >/dev/null || {
 } && echo "${PRG} already has the capability CAP_SYS_NICE enabled"
 
 # Now we can run the app as a regular user...
+# Still have to run it on exactly one cpu core though!!
+echo "[+] taskset -c 01 ./${PRG} 20"
+taskset -c 01 ./${PRG} 20
+exit 0
