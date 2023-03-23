@@ -1,9 +1,15 @@
 #!/bin/bash
 # runit.sh
-# Run the demo sched_pthrd MT app (that spwans off SCHED_FIFO threads)
+# Run the demo sched_pthrd MT app (that spawns off SCHED_FIFO threads)
 # License: MIT
 # (c) kaiwanTECH
-[ ! -f sched_pthrd_rtprio_dbg ] && {
+
+# Turn on unofficial Bash 'strict mode'! V useful
+# "Convert many kinds of hidden, intermittent, or subtle bugs into immediate, glaringly obvious errors"
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/ 
+set -euo pipefail
+name=$(basename $0)
+
   echo make ; make || exit 1
 }
 #--- 'Old' way: via sudo
