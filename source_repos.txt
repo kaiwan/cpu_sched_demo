@@ -1,34 +1,28 @@
 [On Windows, view this with Notepad++ or equivalent]
------------------------------------------------------
-kaiwanTECH : opensource GitHub repos:
------------------------------------------------------
+-------------------------------------------------------------------------
+Kaiwan N Billimoria, kaiwanTECH : opensource GitHub repos for source code
+-------------------------------------------------------------------------
 
-<<-------- Presentations / Workshops ------->>
-Leveraging the Linux CPU Scheduler to write real-time MT apps
-Nov 2022, IEW IoTShow
-https://github.com/kaiwan/cpu_sched_demo
-
-Mitigating Hackers with Hardening on Linux - an Overview for Developers,
-focus on BoF (Buffer Overflow)
-Nov 2022, IEW IoTShow
-https://github.com/kaiwan/hacksec
-
-
-<<------- My Books - GitHub repos ------->>
+<<------- My book repos ------->>
 Linux Kernel Debugging
-- Leverage proven tools and advanced techniques to effectively debug Linux kernels and kernel modules
+ - Leverage proven tools and advanced techniques to effectively debug Linux
+   kernels and kernel modules
 Packt, Aug 2022
 https://github.com/PacktPublishing/Linux-Kernel-Debugging
 
 Linux Kernel Programming
- - A comprehensive guide to kernel internals, writing kernel modules, and kernel synchronization
+ - A comprehensive guide to kernel internals, writing kernel modules, and
+   kernel synchronization
 Packt, Mar 2021
 https://github.com/PacktPublishing/Linux-Kernel-Programming
 
 Linux Kernel Programming - Part 2
  - Char Device Drivers and Kernel Synchronization: Create user-kernel interfaces, work with peripheral I/O, and handle hardware interrupts
 Packt, Mar 2021
-https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
+FREE DOWNLOAD ! here:
+ https://github.com/PacktPublishing/Linux-Kernel-Programming/tree/master/Linux-Kernel-Programming-(Part-2)
+Code:
+ https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
 
 Hands-On System Programming with Linux, Kaiwan NB, Packt - code:
 Packt, Oct 2018
@@ -36,21 +30,35 @@ https://github.com/PacktPublishing/Hands-on-System-Programming-with-Linux
 
 
 <<------- Training repos ------->>
-Linux Fundamentals, CLI, bash scripting:
-https://github.com/kaiwan/L0_cli_trg
-
-Linux systems programming: 
+Linux systems programming (course code L1) 
 https://github.com/kaiwan/L1_sysprg_trg
 
-Linux kernel internals:
+Linux kernel internals (course code L2)
 https://github.com/kaiwan/L2_kernel_trg
 
-Linux kernel device drivers: 
-git clone https://github.com/kaiwan/L3_dd_trg
+Linux kernel device drivers (course code L3)
+https://github.com/kaiwan/L3_dd_trg
+https://github.com/kaiwan/labrat_drv
 
-Embedded Linux:
-git clone https://github.com/kaiwan/L4_emblinux_trg
+Embedded Linux (course code L4)
+https://github.com/kaiwan/L4_emblinux_trg
+https://github.com/kaiwan/yocto_tools
 
-Linux kernel debug: 
-git clone https://github.com/kaiwan/L5_debug_trg
+Linux kernel debug (course code L5)
+https://github.com/kaiwan/L5_debug_trg
 
+
+<<------- Presentations / Conference ------->>
+Presentation + demo code for the 'Leveraging the Linux CPU Scheduler to write real-time MT apps' presentation / workshop
+https://github.com/kaiwan/cpu_sched_demo
+
+Presentation + demo code for the
+"MITIGATING HACKERS WITH HARDENING ON LINUX - AN OVERVIEW FOR DEVELOPERS, FOCUS ON BOF"
+presentation / workshop
+https://github.com/kaiwan/hacksec
+
+
+<<------- Misc ------->>
+Amazon author profile:          https://amazon.com/author/kaiwanbillimoria
+Corporate training course list: http://bit.ly/linux_trg
+My tech blog:                   https://kaiwantech.wordpress.com
