@@ -27,7 +27,6 @@ set -euo pipefail
 
 i=1
 printf "  PID       TID            Name                     Sched Policy  Prio *RT   Nice  CPU-affinity-mask\n"
-#printf "  PID       TID            Name                     Sched Policy  Prio *RT  CPU-affinity-mask\n"
 prev_pid=1
 
 IFS=$'\n'
@@ -50,8 +49,6 @@ do
   prio=$(echo ${rec2_line2} |awk -F: '{print $2}')
   # nice value
   nice_val=$(ps -p ${pid} -o nice | tail -n1)
-  #echo "nice=${nice_val}"
-  #[[ "${nice_val}" = " - " ]] && nice_val=
 
   # ... print it!
   [ ${pid} -ne 0 ] && {
@@ -86,7 +83,6 @@ do
 	    printf "          %3s" ${nice_val}
 		printf "             ${cpuaffinity}"
 	 fi
-	 #[ ${rt1} -eq 1 ] && printf "       ${cpuaffinity}"
   }
   printf "\n"
   prev_pid=${pid}
