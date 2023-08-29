@@ -14,8 +14,8 @@ usage()
 {
 echo "Usage: ${name} [RT-throttling]
 RT-throttling (on by default):
- Set to 0 to ensure that the (soft) RT threads do NOT 'leak' any CPU to non-RT threads
- Set to 1 to ensure that the (soft) RT threads do 'leak' some CPU (5% by default) to non-RT threads
+ Set to 0 -turn off- to ensure that the (soft) RT threads do NOT 'leak' any CPU to non-RT threads
+ Set to 1 -turn on-  to ensure that the (soft) RT threads do 'leak' some CPU (5% by default) to non-RT threads
   (this is the default).
 -h  : show this help screen"
 }
@@ -26,6 +26,12 @@ RT-throttling (on by default):
 	usage
 	exit 0
 }
+# Reset RT throttling values to system defaults
+SCHED_RT_PERIOD_US_DEFAULT=1000000
+sudo sh -c "echo ${SCHED_RT_PERIOD_US_DEFAULT} > /proc/sys/kernel/sched_rt_period_us"
+SCHED_RT_RUNTIME_US_DEFAULT=950000
+sudo sh -c "echo ${SCHED_RT_RUNTIME_US_DEFAULT} > /proc/sys/kernel/sched_rt_runtime_us"
+
 RT_THROTTLING=1
 [[ $# -eq 1 && $1 -eq 0 ]] && RT_THROTTLING=0
 
