@@ -27,6 +27,7 @@ RT-throttling (on by default):
 	exit 0
 }
 # Reset RT throttling values to system defaults
+echo "Resetting RT throttling values to (typical) system defaults"
 SCHED_RT_PERIOD_US_DEFAULT=1000000
 sudo sh -c "echo ${SCHED_RT_PERIOD_US_DEFAULT} > /proc/sys/kernel/sched_rt_period_us"
 SCHED_RT_RUNTIME_US_DEFAULT=950000

@@ -7,20 +7,8 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <sys/mman.h>		// mlock[all]
 #include "libpk.h"
-
-/*
- * Undefine to switch off debug messages emitted via our MSG() macro
- * Typically do the -DDEBUG or -UDEBUG within the Makefile to avoid hard-coding it..
- * Here, we do hardcode it to be defined as otherwise the helpful prints won't
- * appear...
- */
-#define DEBUG
-#ifdef DEBUG
-#define MSG(string, args...) fprintf(stderr, "%s:%s : " string, __FILE__, __func__, ##args)
-#else
-#define MSG(string, args...)
-#endif
 
 /* This thread runs with SCHED_FIFO policy and RT prio as passed */
 void *thrd_p2(void *msg)
@@ -84,6 +72,7 @@ void *thrd_p3(void *msg)
 int main(int argc, char **argv)
 {
 	pthread_t p2, p3;
+	pthread_attr_t attr;
 	int r, min, max;
 	long rt_pri = 1;
 
@@ -91,6 +80,12 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Usage: %s realtime-priority\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
+	/* Lock memory */
+	if (mlockall(MCL_CURRENT | MCL_FUTURE) == -1) {
+		fprintf(stderr, "mlockall failed: %m\n");
+		exit(-2);
+	}
+
 	min = sched_get_priority_min(SCHED_FIFO);
 	if (min == -1) {
 		perror("sched_get_priority_min failure");
@@ -101,13 +96,26 @@ int main(int argc, char **argv)
 		perror("sched_get_priority_max failure");
 		exit(EXIT_FAILURE);
 	}
-	MSG("SCHED_FIFO priority range is %d to %d\n", min, max);
+	printf("SCHED_FIFO priority range is %d to %d\n", min, max);
 
 	rt_pri = atoi(argv[1]);	// TODO: better to use strtoul(3) for better checking/IoF ...
 	if ((rt_pri < min) || (rt_pri > (max - 10))) {
 		fprintf(stderr,
 			"%s: Priority value passed (%ld) out of range [%d-%d].\n",
 			argv[0], rt_pri, min, (max - 10));
+		exit(EXIT_FAILURE);
+	}
+
+	/* Initialize pthread attributes (default values) */
+	r = pthread_attr_init(&attr);
+	if (r) {
+		fprintf(stderr, "init pthread attributes failed\n");
+		exit(EXIT_FAILURE);
+	}
+	/* Set a specific stack size  */
+	r = pthread_attr_setstacksize(&attr, PTHREAD_STACK_MIN);
+	if (r) {
+		fprintf(stderr, "pthread setstacksize failed\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -118,7 +126,7 @@ int main(int argc, char **argv)
 	printf("%s() thread (%d): now creating realtime pthread p2..\n",
 	       __func__, getpid());
 	r = pthread_create(&p2,	// thread id
-			   NULL,	// thread attributes (use default)
+			   &attr,	// thread attributes
 			   thrd_p2,	// function to execute
 			   (void *)rt_pri);	// argument to function
 	if (r) {
@@ -129,7 +137,7 @@ int main(int argc, char **argv)
 	printf("%s() thread (%d): now creating realtime pthread p3..\n",
 	       __func__, getpid());
 	r = pthread_create(&p3,	// thread id
-			   NULL,	// thread attributes (use default)
+			   &attr,	// thread attributes
 			   thrd_p3,	// function to execute
 			   (void *)rt_pri);	// argument to function
 	if (r) {
