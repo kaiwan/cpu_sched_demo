@@ -1,14 +1,32 @@
 [On Windows, view this with Notepad++ or equivalent]
--------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 Kaiwan N Billimoria, kaiwanTECH : opensource GitHub repos for source code
--------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 
 <<------- My book repos ------->>
+Linux Kernel Programming, 2E (2nd Edition)
+ - A comprehensive guide to kernel internals, writing kernel modules, and kernel synchronization
+Packt, Feb 2024
+https://github.com/PacktPublishing/Linux-Kernel-Programming_2E
+
 Linux Kernel Debugging
  - Leverage proven tools and advanced techniques to effectively debug Linux
    kernels and kernel modules
 Packt, Aug 2022
 https://github.com/PacktPublishing/Linux-Kernel-Debugging
+
+Linux Kernel Programming - Part 2
+ - Char Device Drivers and Kernel Synchronization: Create user-kernel interfaces,
+   work with peripheral I/O, and handle hardware interrupts
+Packt, Mar 2021
+FREE DOWNLOAD ! here:
+ https://github.com/PacktPublishing/Linux-Kernel-Programming/tree/master/Linux-Kernel-Programming-(Part-2)
+Code:
+ https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
+
+Hands-On System Programming with Linux, Kaiwan NB, Packt
+Packt, Oct 2018
+https://github.com/PacktPublishing/Hands-on-System-Programming-with-Linux
 
 Linux Kernel Programming
  - A comprehensive guide to kernel internals, writing kernel modules, and
@@ -16,20 +34,14 @@ Linux Kernel Programming
 Packt, Mar 2021
 https://github.com/PacktPublishing/Linux-Kernel-Programming
 
-Linux Kernel Programming - Part 2
- - Char Device Drivers and Kernel Synchronization: Create user-kernel interfaces, work with peripheral I/O, and handle hardware interrupts
-Packt, Mar 2021
-FREE DOWNLOAD ! here:
- https://github.com/PacktPublishing/Linux-Kernel-Programming/tree/master/Linux-Kernel-Programming-(Part-2)
-Code:
- https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
-
-Hands-On System Programming with Linux, Kaiwan NB, Packt - code:
-Packt, Oct 2018
-https://github.com/PacktPublishing/Hands-on-System-Programming-with-Linux
+'Published Books' on the official kernel repo:
+https://elixir.bootlin.com/linux/v6.4/source/Documentation/process/kernel-docs.rst#L75
 
 
 <<------- Training repos ------->>
+Linux Fundamentals CLI and Bash scripting (course code L0)
+https://github.com/kaiwan/L0_cli_trg
+
 Linux systems programming (course code L1) 
 https://github.com/kaiwan/L1_sysprg_trg
 
@@ -37,28 +49,39 @@ Linux kernel internals (course code L2)
 https://github.com/kaiwan/L2_kernel_trg
 
 Linux kernel device drivers (course code L3)
+-----------------------------------------------------------------
 https://github.com/kaiwan/L3_dd_trg
 https://github.com/kaiwan/labrat_drv
+https://github.com/kaiwan/drv_johannes
+https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
 
 Embedded Linux (course code L4)
 https://github.com/kaiwan/L4_emblinux_trg
 https://github.com/kaiwan/yocto_tools
 
-Linux kernel debug (course code L5)
-https://github.com/kaiwan/L5_debug_trg
+Linux userspace debug (course code L5-U)
+https://github.com/kaiwan/L5_user_debug
+
+Linux kernel debug (course code L5-K)
+https://github.com/kaiwan/L5_kernel_debug
+
+Misc/useful
+https://github.com/kaiwan/usefulsnips
 
 
 <<------- Presentations / Conference ------->>
-Presentation + demo code for the 'Leveraging the Linux CPU Scheduler to write real-time MT apps' presentation / workshop
+Tutorial: "Leveraging the OS CPU Scheduler to Write Real-Time MT Apps" (2h8m)
+Linux Foundation Event: This session was recorded by Kaiwan as a (by invitation) virtual presentation for the Open Source Summit NA, Vancouver, Canada, May 2023:
+https://youtu.be/h9psonTquHU
 https://github.com/kaiwan/cpu_sched_demo
 
-Presentation + demo code for the
-"MITIGATING HACKERS WITH HARDENING ON LINUX - AN OVERVIEW FOR DEVELOPERS, FOCUS ON BOF"
-presentation / workshop
+"Mitigating Hackers with Hardening on Linux – An Overview for Developers, Focus on BoF" (3h15m)
+Linux Foundation Event: This session too was recorded by Kaiwan as a (by invitation) virtual presentation for the Embedded Open Source Summit, Prague, CZ, July 2023:
+https://youtu.be/KQa_XEiLGMc
 https://github.com/kaiwan/hacksec
 
 
 <<------- Misc ------->>
-Amazon author profile:          https://amazon.com/author/kaiwanbillimoria
+Amazon author profile:             https://amazon.com/author/kaiwanbillimoria
 Corporate training course list: http://bit.ly/linux_trg
-My tech blog:                   https://kaiwantech.wordpress.com
+My tech blog:                              https://kaiwantech.wordpress.com
